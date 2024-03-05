@@ -257,9 +257,14 @@ button {
     font-size: 18px;
   }
 }
+.weather .topPanel-image {
+  width: 321px;
+  height: 321px;
+}
 @media (max-width: 768px) {
   .weather .topPanel-image {
     width: 200px;
+    height: 200px;
   }
 }
 @media (max-width: 554px) {

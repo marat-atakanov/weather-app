@@ -10,6 +10,7 @@ import { mobileDeviceMenuFunc } from "./mobileDeviceMenu.js";
 
 const forecastBtn = document.querySelector("#forecastBtn");
 const cityName = document.querySelectorAll(".cityName");
+const mainWeatherType = document.querySelectorAll(".mainWeatherType");
 const weatherType = document.querySelector("#weatherType");
 const mainTemperature = document.querySelector("#mainTemperature");
 const dateInfo = document.querySelector("#dateInfo");
@@ -21,12 +22,23 @@ const errorMessage = document.querySelector(".errorMessage");
 const htmlBody = document.querySelector("body");
 
 const changeInfo = (data) => {
-  htmlBody.style.backgroundImage = data.weather[0].main.toLowerCase() === "rain" ? "url(assets/thunderBg.jpeg)" : ""
-  htmlBody.style.backgroundColor = data.weather[0].main.toLowerCase() === "rain" ? "#1f1d23" : "#D69E36"
-  localStorage.setItem("city", data.name)
-  cityName.forEach(name => {
+  htmlBody.style.backgroundImage =
+    data.weather[0].main.toLowerCase() === "rain"
+      ? "url(assets/thunderBg.jpeg)"
+      : "";
+  htmlBody.style.backgroundColor =
+    data.weather[0].main.toLowerCase() === "rain" ? "#1f1d23" : "#D69E36";
+  mainWeatherType.forEach((type) => {
+    if (data.weather[0].main.toLowerCase() === "rain") {
+      type.setAttribute("src", "assets/rainy.svg");
+    } else {
+      type.setAttribute("src", "assets/cloud.svg");
+    }
+  });
+  localStorage.setItem("city", data.name);
+  cityName.forEach((name) => {
     name.innerText = data.name;
-  })
+  });
   weatherType.innerText = data.weather[0].main;
   mainTemperature.innerText = data.main.temp.toFixed(0) + "°C";
 
@@ -38,7 +50,7 @@ const changeInfo = (data) => {
 };
 
 const showAndHideErrorMessage = (message) => {
-  errorMessage.innerText = message
+  errorMessage.innerText = message;
   errorMessage.style.opacity = 1;
   errorMessage.style.transition = "150ms";
   setTimeout(() => {
@@ -51,7 +63,7 @@ export const fetchDataChangeInfo = async (city) => {
   const cityWeather = await fetchCityWeatherData(city);
   if (cityWeather.cod === 200) changeInfo(cityWeather);
   else showAndHideErrorMessage(cityWeather.message);
-}
+};
 
 window.onkeydown = async (e) => {
   if (
@@ -59,7 +71,7 @@ window.onkeydown = async (e) => {
     isSearchBarOpen &&
     searchBarInput.value !== ""
   ) {
-    await fetchDataChangeInfo(searchBarInput.value)
+    await fetchDataChangeInfo(searchBarInput.value);
     closeSearchBar();
   } else if (e.key.toLowerCase() === "enter") {
     closeSearchBar();
@@ -67,19 +79,19 @@ window.onkeydown = async (e) => {
 };
 
 (async () => {
-  const initialCityName = localStorage.getItem("city") || "Bishkek"
-  fetchDataChangeInfo(initialCityName)
+  const initialCityName = localStorage.getItem("city") || "Bishkek";
+  fetchDataChangeInfo(initialCityName);
 })();
 
 searchBarFunc();
-mobileDeviceMenuFunc()
+mobileDeviceMenuFunc();
 
 forecastBtn.onclick = () => {
   console.log(1212);
-  forecastBtn.style.backgroundColor = "#EACA8F"
-  forecastBtn.style.color = "#FFFFFF"
+  forecastBtn.style.backgroundColor = "#EACA8F";
+  forecastBtn.style.color = "#FFFFFF";
   setTimeout(() => {
-    forecastBtn.style.backgroundColor = "#FFAA0F"
-    forecastBtn.style.color = "#2B261D"
+    forecastBtn.style.backgroundColor = "#FFAA0F";
+    forecastBtn.style.color = "#2B261D";
   }, 2000);
-}
+};
