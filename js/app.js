@@ -8,6 +8,7 @@ import {
 import { fetchCityWeatherData } from "./data.js";
 import { mobileDeviceMenuFunc } from "./mobileDeviceMenu.js";
 
+const forecastBtn = document.querySelector("#forecastBtn");
 const cityName = document.querySelectorAll(".cityName");
 const weatherType = document.querySelector("#weatherType");
 const mainTemperature = document.querySelector("#mainTemperature");
@@ -72,3 +73,13 @@ window.onkeydown = async (e) => {
 
 searchBarFunc();
 mobileDeviceMenuFunc()
+
+forecastBtn.onclick = () => {
+  console.log(1212);
+  forecastBtn.style.backgroundColor = "#EACA8F"
+  forecastBtn.style.color = "#FFFFFF"
+  setTimeout(() => {
+    forecastBtn.style.backgroundColor = "#FFAA0F"
+    forecastBtn.style.color = "#2B261D"
+  }, 2000);
+}
