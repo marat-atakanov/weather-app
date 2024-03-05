@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-10..0,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/css/bundle.css" />
+  </head>
+  <body>
+    <div class="searchBar" id="searchBarDiv">
+      <button class="searchBar-closeBtn" id="closeSearchBarBtn">✕</button>
+      <span class="searchBar-cityName cityName">City</span>
+      <div class="searchBar-inputAddBtn">
+        <input
+          autocomplete="off"
+          id="searchBarInput"
+          placeholder="City name"
+          type="text"
+        />
+        <button
+          class="searchBar-inputAddBtn-addBtn"
+          id="addFavoriteBtn"
+          title="Add to favorites"
+        ></button>
+      </div>
+      <div class="searchBar-favorites" id="favorites"></div>
+    </div>
+
+    <div class="mobileDeviceMenu" id="mobileDeviceMenu">
+      <button class="mobileDeviceMenu-closeBtn" id="closeMenuBtn">✕</button>
+      <nav>
+        <ul class="mobileDeviceMenu-links navLinks">
+          <li>
+            <a href="#" class="mobileDeviceMenu-links-profilePicture">
+              <img src="assets/profilePicture.webp" alt="profile picture" />
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div>
+                <img src="assets/weatherLink.svg" alt="weather icon" />
+              </div>
+              weather
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div>
+                <img src="assets/exploreLink.svg" alt="explore icon" />
+              </div>
+              explore
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div>
+                <img src="assets/citiesLink.svg" alt="cities icon" />
+              </div>
+              cities
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div>
+                <img src="assets/settingsLink.svg" alt="settings icon" />
+              </div>
+              settings
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+
+    </div>
+    <div class="wrapper">
+      <main class="weather">
+        <div class="container">
+          <div class="topPanel">
+            <div class="topPanel-info">
+              <div class="topPanel-info-mobileDevice">
+                <button class="topPanel-info-cityNameBtn" id="searchBarToggle">
+                  <span class="topPanel-info-cityNameBtn-cityName cityName"
+                    >City</span
+                  >
+                  <div>
+                    <img
+                      id="searchArrow"
+                      src="assets/arrow.svg"
+                      alt="arrow btn"
+                    />
+                    <img
+                      id="searchArrowMobile"
+                      src="assets/arrowMobile.svg"
+                      alt="arrow btn"
+                    />
+                  </div>
+                </button>
+
+                <button class="topPanel-info-mobileDevice-profilePicture" id="mobileProfilePictureBtn">
+                  <img src="assets/profilePicture.webp" alt="profile picture" />
+                </button>
+              </div>
+
+              <span class="topPanel-info-type" id="weatherType">Clouds</span>
+
+              <div class="topPanel-info-mobileImage">
+                <img src="assets/cloud.svg" alt="" />
+              </div>
+
+              <h2 class="topPanel-info-deg" id="mainTemperature">0&deg;C</h2>
+              <p class="topPanel-info-desc" id="dateInfo">
+                Monday | 1 Jan 2024
+              </p>
+            </div>
+            <div class="topPanel-image">
+              <img src="assets/cloud.svg" alt="cloudy" />
+            </div>
+          </div>
+          <div class="bottomPanel">
+            <div class="bottomPanel-left">
+              <a href="#" class="bottomPanel-left-profilePicture">
+                <img src="assets/profilePicture.webp" alt="profile picture" />
+              </a>
+              <nav>
+                <ul class="bottomPanel-left-links navLinks">
+                  <li>
+                    <a href="#">
+                      <div>
+                        <img src="assets/weatherLink.svg" alt="weather icon" />
+                      </div>
+                      weather
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div>
+                        <img src="assets/exploreLink.svg" alt="explore icon" />
+                      </div>
+                      explore
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div>
+                        <img src="assets/citiesLink.svg" alt="cities icon" />
+                      </div>
+                      cities
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div>
+                        <img src="assets/settingsLink.svg" alt="settings icon" />
+                      </div>
+                      settings
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div class="bottomPanel-center">
+              <div class="bottomPanel-center-top">
+                <h3>Activities in your area</h3>
+                <ul class="bottomPanel-center-top-activities">
+                  <li>
+                    <div>
+                      <img src="assets/placeholder.webp" alt="" />
+                    </div>
+                    <span> 2km away </span>
+                  </li>
+                  <li>
+                    <div>
+                      <img src="assets/placeholder2.webp" alt="" />
+                    </div>
+                    <span> 1.5km away </span>
+                  </li>
+                  <li>
+                    <div>
+                      <img src="assets/placeholder3.webp" alt="" />
+                    </div>
+                    <span> 3km away </span>
+                  </li>
+                  <li>
+                    <div>
+                      <img src="assets/placeholder4.webp" alt="" />
+                    </div>
+                    <span> 500m away </span>
+                  </li>
+                </ul>
+              </div>
+              <div class="bottomPanel-center-bottom">
+                <div class="curvedLine">
+                  <svg
+                    width="884"
+                    height="64"
+                    viewBox="0 0 884 64"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M-1.02344 1.02618C-1.02344 1.02618 95.0223 6.13268 155.372 17.569C201.82 26.3708 225.986 43.9593 272.669 47.5528C319.352 51.1464 345.203 36.5036 392.024 36.1797C450.314 35.7764 482.232 49.837 540.5 51.5C608.146 53.4306 645.888 38.609 713.5 41.5C779.107 44.3052 821.18 49.5377 885 65"
+                      stroke="#ffffff41"
+                      stroke-width="2.04712"
+                    />
+                  </svg>
+                </div>
+                <p>24-hour forecast</p>
+
+                <div class="bottomPanel-center-bottom-infoPoint infoPoint">
+                  <span>26</span>
+                  <div class="dot"></div>
+                  <div class="dashedLine"></div>
+                  <div
+                    class="bottomPanel-center-bottom-infoPoint-type infoPoint-type"
+                  >
+                    <div>
+                      <img src="assets/types/cloudyNight.svg" alt="" />
+                    </div>
+                    <p>11.7km/h</p>
+                    <span>Now</span>
+                  </div>
+                </div>
+
+                <div class="bottomPanel-center-bottom-infoPoint2 infoPoint">
+                  <span>26</span>
+                  <div
+                    class="bottomPanel-center-bottom-infoPoint-type infoPoint-type"
+                  >
+                    <div>
+                      <img src="assets/types/night.svg" alt="" />
+                    </div>
+                    <p>9.3km/h</p>
+                    <span>22:00</span>
+                  </div>
+                </div>
+
+                <div class="bottomPanel-center-bottom-infoPoint3 infoPoint">
+                  <span>22</span>
+                  <div
+                    class="bottomPanel-center-bottom-infoPoint-type infoPoint-type"
+                  >
+                    <div>
+                      <img src="assets/types/thunderNight.svg" alt="" />
+                    </div>
+                    <p>12km/h</p>
+                    <span>00:00</span>
+                  </div>
+                </div>
+
+                <div class="bottomPanel-center-bottom-infoPoint4 infoPoint">
+                  <span>16</span>
+                  <div
+                    class="bottomPanel-center-bottom-infoPoint-type infoPoint-type"
+                  >
+                    <div>
+                      <img src="assets/types/thunder.svg" alt="" />
+                    </div>
+                    <p>15km/h</p>
+                    <span>02:00</span>
+                  </div>
+                </div>
+
+                <div class="bottomPanel-center-bottom-infoPoint5 infoPoint">
+                  <span>20</span>
+                  <div
+                    class="bottomPanel-center-bottom-infoPoint-type infoPoint-type"
+                  >
+                    <div>
+                      <img src="assets/types/thunder.svg" alt="" />
+                    </div>
+                    <p>15km/h</p>
+                    <span>04:00</span>
+                  </div>
+                </div>
+
+                <div class="bottomPanel-center-bottom-infoPoint6 infoPoint">
+                  <span>22</span>
+                  <div
+                    class="bottomPanel-center-bottom-infoPoint-type infoPoint-type"
+                  >
+                    <div>
+                      <img src="assets/types/thunderNight.svg" alt="" />
+                    </div>
+                    <p>15km/h</p>
+                    <span>06:00</span>
+                  </div>
+                </div>
+
+                <div class="bottomPanel-center-bottom-infoPoint7 infoPoint">
+                  <span>16</span>
+                  <div
+                    class="bottomPanel-center-bottom-infoPoint-type infoPoint-type"
+                  >
+                    <div>
+                      <img src="assets/types/thunder.svg" alt="" />
+                    </div>
+                    <p>15km/h</p>
+                    <span>08:00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bottomPanel-right">
+              <button class="bottomPanel-right-leftArrowBtn">
+                <img src="assets/leftArrow.svg" alt="left arrow button" />
+              </button>
+              <button class="bottomPanel-right-rightArrowBtn">
+                <img src="assets/rightArrow.svg" alt="left arrow button" />
+              </button>
+
+              <div class="bottomPanel-right-days">
+                <div class="bottomPanel-right-days-day">
+                  <span>FRI</span>
+                  <div>
+                    <img src="assets/types/shower.svg" alt="" />
+                  </div>
+                </div>
+                <div class="bottomPanel-right-days-day">
+                  <span>SAT</span>
+                  <div>
+                    <img src="assets/types/sunny.svg" alt="" />
+                  </div>
+                </div>
+                <div class="bottomPanel-right-days-day">
+                  <span>SUN</span>
+                  <div>
+                    <img src="assets/types/cloudy.svg" alt="" />
+                  </div>
+                </div>
+                <div class="bottomPanel-right-days-day">
+                  <span>MON</span>
+                  <div>
+                    <img src="assets/types/rainy.svg" alt="" />
+                  </div>
+                </div>
+                <div class="bottomPanel-right-days-day">
+                  <span>TUES</span>
+                  <div>
+                    <img src="assets/types/thunder.svg" alt="" />
+                  </div>
+                </div>
+              </div>
+              <span class="bottomPanel-right-time">8:00PM GMT</span>
+
+              <div class="bottomPanel-right-airConditions">
+                <h4>AIR CONDITIONS</h4>
+                <ul class="bottomPanel-right-airConditions-list">
+                  <li class="bottomPanel-right-airConditions-list-item">
+                    <div class="bottomPanel-right-airConditions-list-item-icon">
+                      <img
+                        src="assets/airConditions/temperatureIcon.svg"
+                        alt="temperature icon"
+                      />
+                    </div>
+                    <div class="bottomPanel-right-airConditions-list-item-info">
+                      <h5>Real Feel</h5>
+                      <span id="airConditionsFeelsLike">30&deg;</span>
+                    </div>
+                  </li>
+                  <li class="bottomPanel-right-airConditions-list-item">
+                    <div class="bottomPanel-right-airConditions-list-item-icon">
+                      <img
+                        src="assets/airConditions/windyIcon.svg"
+                        alt="windy icon"
+                      />
+                    </div>
+                    <div class="bottomPanel-right-airConditions-list-item-info">
+                      <h5>Wind</h5>
+                      <span id="airConditionsWind">0.8 km/hr</span>
+                    </div>
+                  </li>
+                  <li class="bottomPanel-right-airConditions-list-item">
+                    <div class="bottomPanel-right-airConditions-list-item-icon">
+                      <img
+                        src="assets/airConditions/chanceOfRainIcon.svg"
+                        alt="chance of rain icon"
+                      />
+                    </div>
+                    <div class="bottomPanel-right-airConditions-list-item-info">
+                      <h5>Chance of rain</h5>
+                      <span>2%</span>
+                    </div>
+                  </li>
+                  <li class="bottomPanel-right-airConditions-list-item">
+                    <div class="bottomPanel-right-airConditions-list-item-icon">
+                      <img
+                        src="assets/airConditions/uvIndexIcon.svg"
+                        alt="uv index icon"
+                      />
+                    </div>
+                    <div class="bottomPanel-right-airConditions-list-item-info">
+                      <h5>UV index</h5>
+                      <span>4</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <svg
+                class="bottomPanel-right-linearGradient"
+                preserveAspectRatio="none"
+                viewBox="0 0 324 199"
+                fill="#ffffff41"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 70.5C0 70.5 54.5 32.3421 66.5 31.5C77.5 30.7282 153 85.5 153 85.5C153 85.5 217.5 2.49993 234 0.999966C250.5 -0.5 324 49 324 49V199H0V70.5Z"
+                  fill="url(#paint0_linear_1_3249)"
+                />
+                <defs>
+                  <linearGradient
+                    id="paint0_linear_1_3249"
+                    x1="162"
+                    y1="1"
+                    x2="162"
+                    y2="220"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#ffffff30" />
+                    <stop offset="0.401484" stop-color="#ffffff05" />
+                    <stop offset="1" stop-color="#ffffff00" stop-opacity="0" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <div class="errorMessage">
+        <p>City not found</p>
+      </div>
+    </div>
+  </body>
+  <script type="module" src="./js/app.js"></script>
+</html>
+
+<!-- 5a66bf1c19fe24223d418a534734a2cc -->
+<!-- https://api.openweathermap.org/data/2.5/weather?q=bishkek&units=metric&lang=en&appid=5a66bf1c19fe24223d418a534734a2cc -->
